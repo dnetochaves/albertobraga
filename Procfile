@@ -1,0 +1,1 @@
+web: gunicorn albertobraga.wsgi --log-file -
