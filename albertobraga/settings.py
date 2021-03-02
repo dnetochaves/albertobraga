@@ -134,7 +134,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LOGIN_REDIRECT_URL = 'core/index'
 LOGOUT_REDIRECT_URL = '/'
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
