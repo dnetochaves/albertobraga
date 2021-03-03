@@ -22,6 +22,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
     path('', LoginView.as_view(), name="login"),
     path('core/', include('apps.core.urls')),
+    path('user-profile/', include('apps.user_profile.urls')),
+    path('lideranca/', include('apps.lideranca.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
