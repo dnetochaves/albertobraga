@@ -56,12 +56,12 @@
                         <!--//app-search-box-->
 
                         <div class="app-utilities col-auto">
-                          
+
 
                             <div class="app-utility-item app-user-dropdown dropdown">
                                 <a class="dropdown-toggle" id="user-dropdown-toggle" data-toggle="dropdown" href="#"
-                                    role="button" aria-expanded="false"><img class="rounded-circle" src="{{ user.userprofile.photo.url }}"
-                                        alt="user profile"></a>
+                                    role="button" aria-expanded="false"><img class="rounded-circle"
+                                        src="{{ user.userprofile.photo.url }}" alt="user profile"></a>
                                 <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
                                     <li><a class="dropdown-item"
                                             href="{% url 'user_profile:account-update' user.userprofile.pk %}">Conta</a>
@@ -102,7 +102,25 @@
                     <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link active" href="{% url 'lideranca:lideranca-list' %}">
+                            <a class="nav-link" href="{% url 'lideranca:lideranca-list' %}">
+                                <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-people-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                                        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text">Atendimento</span>
+                            </a>
+                            <!--//nav-link-->
+                        </li>
+                        <!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link" href="{% url 'lideranca:lideranca-list' %}">
                                 <span class="nav-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-person-lines-fill" viewBox="0 0 16 16">
@@ -115,6 +133,7 @@
                             <!--//nav-link-->
                         </li>
                         <!--//nav-item-->
+
 
 
 
@@ -179,7 +198,7 @@
         <div class="app-content pt-3 p-md-3 p-lg-4">
             <div class="container-xl">
 
-
+                {% include 'partials/_messages.html' %}
                 {% block content %}
 
                 {% endblock content %}
@@ -193,8 +212,8 @@
         <footer class="app-footer">
             <div class="container text-center py-3">
                 <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-                <small class="copyright">Gabinete On-Line<i class="fas fa-heart" style="color: #fb866a;"></i> 
-                    </small>
+                <small class="copyright">Gabinete On-Line<i class="fas fa-heart" style="color: #fb866a;"></i>
+                </small>
 
             </div>
         </footer>

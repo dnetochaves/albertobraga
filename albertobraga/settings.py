@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from decouple import config
 from dj_database_url import parse as dburl
+from django.contrib.messages import constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,3 +149,12 @@ AWS_LOCATION = 'static'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+MESSAGE_TAGS = {
+    constants.DEBUG: 'alert-info',
+    constants.ERROR: 'alert-danger',
+    constants.INFO: 'alert-info',
+    constants.SUCCESS: 'alert-success',
+    constants.WARNING: 'alert-warning',
+}
