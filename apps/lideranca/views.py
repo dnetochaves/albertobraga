@@ -3,7 +3,8 @@ from django.views.generic.list import ListView
 from apps.lideranca.models import Lideranca
 from django.views.generic import TemplateView
 from django.http import HttpResponse
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 
 def lideranca_list(request):
@@ -15,6 +16,17 @@ class LiderancaCreate(CreateView):
     model = Lideranca
     fields = ['nome', 'telefone', 'data_nascimento']
 
+
 class ListLideranca(ListView):
     model = Lideranca
 
+
+class LiderancaUpdate(UpdateView):
+    model = Lideranca
+    fields = ['nome', 'telefone', 'data_nascimento']
+
+
+class LiderancaDelete(DeleteView):
+    model = Lideranca
+    fields = ['nome', 'telefone', 'data_nascimento']
+    success_url = reverse_lazy('lideranca:lideranca-list')

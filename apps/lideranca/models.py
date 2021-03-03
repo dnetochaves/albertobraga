@@ -11,6 +11,6 @@ class Lideranca(models.Model):
         return self.nome
 
     def get_absolute_url(self):
-        return reverse('lideranca:list-lideranca')
+        return reverse('lideranca:lideranca-list')
     
 

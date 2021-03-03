@@ -1,0 +1,50 @@
+{% extends 'admin_base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+<div class="col-12 col-lg-12">
+    <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
+        <div class="app-card-header p-3 border-bottom-0">
+            <div class="row align-items-center gx-3">
+                <div class="col-auto">
+                    <div class="app-icon-holder text-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-x-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </div>
+                    <!--//icon-holder-->
+
+                </div>
+                <!--//col-->
+                <div class="col-auto">
+                    <h4 class="app-card-title">Atenção</h4>
+                </div>
+                <!--//col-->
+            </div>
+            <!--//row-->
+        </div>
+        <!--//app-card-header-->
+        <div class="app-card-body px-4 w-100">
+
+
+            <form method="post">{% csrf_token %}
+                <p>Tem certeza de que deseja excluir "{{ object }}"?</p>
+                <input class="btn btn-danger" type="submit" value="Confirme"> |
+                <a class="btn app-btn-secondary" href="{% url 'lideranca:lideranca-list' %}">Voltar</a>
+            </form>
+
+        </div>
+        <!--//app-card-body-->
+        <div class="app-card-footer p-4 mt-auto">
+
+        </div>
+        <!--//app-card-footer-->
+
+    </div>
+    <!--//app-card-->
+</div>
+{% endblock content %}
