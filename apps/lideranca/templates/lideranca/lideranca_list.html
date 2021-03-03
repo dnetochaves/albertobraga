@@ -56,12 +56,13 @@
     <!--//col-auto-->
 </div>
 <div class="table-responsive">
-   
+
     <div class="tab-content" id="orders-table-tab-content">
         <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
             <div class="app-card app-card-orders-table shadow-sm mb-5">
                 <div class="app-card-body">
                     <div class="table-responsive">
+
                         <table class="table app-table-hover mb-0 text-left">
                             <thead>
                                 <tr>
@@ -72,20 +73,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for lideranca in object_list %}
                                 <tr>
 
-                                    {% for lideranca in object_list %}
-                                        <td class="cell">{{ lideranca.nome }}</td>
-                                        <td class="cell">{{ lideranca.telefone }}</td>
-                                        <td class="cell">{{ lideranca.data_nascimento }}</td>
-                                        <td class="cell">
-                                            <a class="btn-sm app-btn-secondary" href="#">Atualizar</a>
-                                            <a class="btn-sm app-btn-secondary" href="#">Excluir</a>
-                                        </td>
-                                    {% endfor %}
+
+                                    <td class="cell">{{ lideranca.nome }}</td>
+                                    <td class="cell">{{ lideranca.telefone }}</td>
+                                    <td class="cell">{{ lideranca.data_nascimento }}</td>
+                                    <td class="cell">
+                                        <a class="btn-sm app-btn-secondary" href="#">Atualizar</a>
+                                        <a class="btn-sm app-btn-secondary" href="#">Excluir</a>
+                                    </td>
+
 
 
                                 </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
@@ -99,4 +102,5 @@
 
         </div>
     </div>
+
     {% endblock content %}
