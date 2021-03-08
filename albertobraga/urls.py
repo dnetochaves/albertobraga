@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
-    path('', LoginView.as_view(), name="login"),
-    path('core/', include('apps.core.urls')),
+    path('', include('apps.core.urls')),
+    path('login', LoginView.as_view(), name="login"),
     path('user-profile/', include('apps.user_profile.urls')),
     path('lideranca/', include('apps.lideranca.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
