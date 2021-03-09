@@ -121,7 +121,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+'''
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -131,12 +131,12 @@ STATICFILES_DIRS = [
 
 #STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-'''
+
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-
+'''
 
 
 
@@ -152,7 +152,7 @@ AWS_LOCATION = 'static'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-'''
+
 LOGIN_REDIRECT_URL = '/user-profile/account/'
 LOGOUT_REDIRECT_URL = '/'
 
