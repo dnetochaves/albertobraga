@@ -24,6 +24,7 @@ urlpatterns = [
     path('login', LoginView.as_view(), name="login"),
     path('user-profile/', include('apps.user_profile.urls')),
     path('lideranca/', include('apps.lideranca.urls')),
+    path('blog/', include('apps.blog.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

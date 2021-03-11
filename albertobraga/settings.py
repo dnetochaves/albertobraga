@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.user_profile',
     'apps.lideranca',
+    'apps.blog',
     'widget_tweaks',
 ]
 
